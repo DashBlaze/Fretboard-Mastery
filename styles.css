@@ -1,0 +1,181 @@
+
+body {
+    text-align: center;
+    background-color: #000000;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    background: linear-gradient(-45deg, #23a6d5, #9876ff, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientAnimation 50s ease infinite;
+    color: #000000;
+    min-height: 100vh;
+}
+
+
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.container {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+    color: #fff;
+}
+
+.startButton {
+    background-color: #4CAF50;
+    color: white;
+}
+
+#pauseButton {
+    background-color: #f44336;
+    color: white;
+}
+
+#noteDisplay {
+    font-size: 24px;
+    margin: 20px 0;
+    font-weight: bold;
+}
+
+#fretboard-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+#fretboard {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: #8B4513; /* Color marrón para simular madera */
+    border: 2px solid #000;
+    display: grid;
+    grid-template-columns: repeat(13, 1fr); /* Cambiar a 13 columnas */
+    grid-template-rows: repeat(6, 1fr);
+}
+
+.string {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: silver; /* Color blanco para las cuerdas */
+    left: 0;
+    z-index: 1; /* Asegurar que las cuerdas estén detrás de los botones */
+}
+
+.fret {
+    border-left: 2px solid #fff; /* Color blanco para los trastes */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 2; /* Asegurar que los botones estén delante de las cuerdas */
+}
+
+.fret-marker {
+    width: 20px;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #555;
+}
+
+.fret-marker.correct {
+    background-color: #4caf50;
+    color: #8B4513;
+}
+
+.hidden-note {
+    visibility: hidden;
+}
+
+#score {
+    font-size: 18px;
+    margin: 20px 0;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+}
+
+input[type="number"] {
+    padding: 5px;
+    font-size: 16px;
+    width: 60px;
+}
+
+.fret-numbers {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    position: relative;
+    width: 100%;
+}
+
+.fret-number {
+    font-size: 14px;
+    font-weight: bold;
+    color: #000; /* Color negro para los números de los trastes */
+    text-align: center;
+    width: calc(100% / 13); /* Ajustar a 13 columnas */
+}
+
+.open-string-note {
+    position: absolute;
+    right: 30spx; /* Ajustar según sea necesario */
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 
+      -1px -1px 0 #000,  
+       1px -1px 0 #000,
+      -1px  1px 0 #000,
+       1px  1px 0 #000; /* Color blanco para las notas de cuerdas al aire */
+}
+
+#progressContainer {
+    width: 100%;
+    background-color: #ddd;
+    margin-top: 20px;
+    height: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progressBar {
+    width: 0;
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 0.1s linear;
+}
