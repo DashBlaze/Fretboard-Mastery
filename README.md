@@ -27,7 +27,7 @@ Para instalar y utilizar esta aplicación en tu máquina local, sigue estos paso
 
 La herramienta ya ha sido desplegada en GitHub Pages. Puedes acceder a ella utilizando el siguiente enlace:
 
-[Juego de Memorización del Diapasón de la Guitarra en GitHub Pages](#)
+[Fretboard Mastery en GitHub Pages](https://dashblaze.github.io/Fretboard-Mastery/)
 
 ## Uso
 
